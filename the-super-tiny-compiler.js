@@ -76,16 +76,13 @@
  */
 
 /**
- * Today we're going to write a compiler together. But not just any compiler... A
- * super duper teeny tiny compiler! A compiler that is so small that if you
- * remove all the comments this file would only be ~200 lines of actual code.
+ * 今天我们来一起做一个编译器. 一个超级超级简单的迷你的小编译器! 小到去掉注释以后只有不到200行代码.
  *
- * We're going to compile some lisp-like function calls into some C-like
- * function calls.
+ * 这个小编译器的功能是把一个lisp语法的函数调用表达式转换成C语法的.
  *
- * If you are not familiar with one or the other. I'll just give you a quick intro.
+ * 如果你不熟悉这两种语言, 我就在这里简单介绍一下.
  *
- * If we had two functions `add` and `subtract` they would be written like this:
+ * 我们有两个函数`add`和`subtract`, 他们在两种语言分别是写成这样的:
  *
  *                  LISP                      C
  *
@@ -93,16 +90,15 @@
  *   4 - 2          (subtract 4 2)            subtract(4, 2)
  *   2 + (4 - 2)    (add 2 (subtract 4 2))    add(2, subtract(4, 2))
  *
- * Easy peezy right?
+ * 很简单的,对吧?
  *
- * Well good, because this is exactly what we are going to compile. While this
- * is neither a complete LISP or C syntax, it will be enough of the syntax to
- * demonstrate many of the major pieces of a modern compiler.
+ * 很好, 这就是我们这个编译器要完成的工作. 虽然这几句并不能完整表述LISP和C语言的语法,
+ * 但却包含了必要的语法结构, 用来作为我们编译器的例子足够了.
  */
 
 /**
- * Most compilers break down into three primary stages: Parsing, Transformation,
- * and Code Generation
+ * 大部分的编译器的编译过程可以拆分成3个步骤: 解析, 转换,
+ * 还有生成.
  *
  * 1. *Parsing* is taking raw code and turning it into a more abstract
  *    representation of the code.
